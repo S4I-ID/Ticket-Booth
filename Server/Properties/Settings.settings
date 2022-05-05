@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Server.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DbPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\\CyAN1D3\\School\\MPP Proiect Proxy\\ShowDatabase.db</Value>
+    </Setting>
+    <Setting Name="ServerIP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="ServerPort" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">55556</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
