@@ -1,0 +1,41 @@
+syntax="proto3";
+package protobuff_protocol;
+
+message Sale {
+  string _buyerName=1;
+  int32 _ticketsBought=2;
+  int32 _showId=3;
+}
+
+message Show {
+  int32 id=1;
+  string _artistName=2;
+  string _showName=3;
+  string _address=4;
+  string _time=5;
+  int32 _availableSeats=6;
+  int32 _soldSeats=7;
+}
+
+message User {
+  string username=1;
+  string password=2;
+}
+
+message Answer {
+  enum Type {Unknown=0; Error=1; OK=2; FullShowList=3; DynamicFullShowList=4; FilteredShowList=5; DynamicFilteredShowList=6;}
+  Type type = 1;
+  string error = 2;
+  repeated Show shows = 3;
+}
+
+message Request {
+  enum Type {Unknown=0; Login=1; Logout=2; FullShowList=3; FilteredShowList=4; AddSale=5;}
+  Type type = 1;
+  oneof payload {
+    User user = 2;
+    string username = 3;
+    string datetime = 4;
+    Sale sale = 5;
+  }
+}

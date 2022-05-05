@@ -1,0 +1,6 @@
+rootProject.name = 'MPP Proiect Proxy'
+include ':Client'
+include ':CommonDomain'
+include ':Server'
+include ':PersistenceAndServices'
+

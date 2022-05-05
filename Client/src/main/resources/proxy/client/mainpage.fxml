@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="showsTableView" prefHeight="700.0" prefWidth="450.0">
+        <columns>
+          <TableColumn fx:id="artistName" prefWidth="86.0" text="Artist" />
+          <TableColumn fx:id="showName" prefWidth="82.0" text="Show" />
+            <TableColumn fx:id="address" prefWidth="130.0" text="Address" />
+            <TableColumn fx:id="startTime" prefWidth="62.0" text="Date" />
+            <TableColumn fx:id="availableSeats" prefWidth="46.0" text="Total seats" />
+            <TableColumn fx:id="soldSeats" prefWidth="44.0" text="Sold seats" />
+        </columns>
+      </TableView>
+      <VBox>
+         <children>
+            <Label text="Shows in specified date">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+            </Label>
+            <TableView fx:id="filteredShowsTableView" prefHeight="700.0" prefWidth="450.0">
+               <columns>
+                  <TableColumn fx:id="artistName1" prefWidth="96.0" text="Artist" />
+                  <TableColumn fx:id="showName1" prefWidth="90.0" text="Show" />
+                  <TableColumn fx:id="address1" prefWidth="117.0" text="Address" />
+                  <TableColumn fx:id="startTime1" prefWidth="60.0" text="Date" />
+                  <TableColumn fx:id="availableSeats1" prefWidth="46.0" text="Total seats" />
+                  <TableColumn fx:id="soldSeats1" prefWidth="41.0" text="Sold seats" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox prefHeight="359.0" prefWidth="394.0">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="154.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="240.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <padding>
+                  <Insets top="60.0" />
+               </padding>
+               <children>
+                  <Label text="Buyer Name" GridPane.halignment="RIGHT">
+                     <GridPane.margin>
+                        <Insets right="40.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label text="Number of tickets" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="40.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameTextField" pickOnBounds="false" GridPane.columnIndex="1" />
+                  <Button fx:id="buyButton" alignment="CENTER" mnemonicParsing="false" onAction="#buyButtonAction" prefHeight="25.0" prefWidth="140.0" text="Buy tickets" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <TextField fx:id="ticketTextField" pickOnBounds="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="239.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="155.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <DatePicker fx:id="datePicker" GridPane.halignment="CENTER" />
+                  <Button fx:id="filterButton" mnemonicParsing="false" onAction="#filterButtonAction" prefHeight="25.0" prefWidth="135.0" text="Filter by date" GridPane.columnIndex="1" />
+               </children>
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+            </GridPane>
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logoutButtonAction" prefHeight="25.0" prefWidth="320.0" text="Logout">
+               <VBox.margin>
+                  <Insets bottom="150.0" left="50.0" right="50.0" top="150.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</HBox>
